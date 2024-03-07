@@ -55,41 +55,37 @@ class _NewClothes extends State<NewClothes> {
   Widget build(BuildContext context) {
     return Column(children: [
       SizedBox(height: 10.0),
-      Expanded(
-        flex: 1,
-        child: SingleChildScrollView(
+       SingleChildScrollView(
             scrollDirection: Axis.horizontal,
             child: Row(children: [
-              SizedBox(width: 5.0),
-
+              SizedBox(width: 10.0),
               IconTextButton(
                   Icon(Icons.favorite, color: Colors.red), "Favorites"),
-              SizedBox(width: 5.0),
+              SizedBox(width: 10.0),
               IconTextButton(
                   Icon(Icons.bookmark_rounded,
                       color: Theme.of(context).colorScheme.primary),
                   "Saved"),
-              SizedBox(width: 5.0),
+              SizedBox(width: 10.0),
               IconTextButton(
                   Icon(Icons.whatshot, color: Colors.orange), "Popular"),
-              SizedBox(width: 5.0),
+              SizedBox(width: 10.0),
               IconTextButton(
                   Icon(Icons.location_on,
                       color: Theme.of(context).colorScheme.primary),
                   "Close by"),
-              SizedBox(width: 5.0),
+              SizedBox(width: 10.0),
               IconTextButton(
                   Icon(Icons.checkroom_rounded,
                       color: Theme.of(context).colorScheme.primary),
                   "Size SMALL"),
-              SizedBox(width: 5.0),
+              SizedBox(width: 10.0),
               IconTextButton(
                   Icon(Icons.people,
                       color: Theme.of(context).colorScheme.primary),
                   "Friends"),
-              SizedBox(width: 5.0),
+              SizedBox(width: 10.0),
             ])),
-      ),
       SizedBox(height: 10.0),
       Expanded(
           flex: 20,
