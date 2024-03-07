@@ -2,6 +2,7 @@ import 'package:diis/garment.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import 'data.dart';
 import 'item_details.dart';
 
 class NewClothes extends StatefulWidget {
@@ -12,22 +13,6 @@ class NewClothes extends StatefulWidget {
 }
 
 class _NewClothes extends State<NewClothes> {
-  // Define hard-coded values for app demo
-  static List<Garment> garments = [
-    Garment("Jeans mini-skirt", "assets/images/garment_1.png", "ceh210", 2,
-        "XS", 10),
-    Garment("White sleeveless top", "assets/images/garment_2.png", "ceh210", 1,
-        "S", 2),
-    Garment(
-        "Orange tank top", "assets/images/garment_3.png", "ceh210", 2, "M", 50),
-    Garment("Dodgers blue t-shirt", "assets/images/garment_4.png", "sms227", 2,
-        "XS", 4),
-    Garment("Strapless green dress", "assets/images/garment_5.jpg", "sms227", 2,
-        "S", 10),
-  ];
-
-  static String user = "ceh210";
-
   Widget SingleItem(Garment garment) {
     return Card(
         child: Padding(
@@ -112,16 +97,7 @@ class _NewClothes extends State<NewClothes> {
               child: Padding(
                   padding: EdgeInsets.symmetric(horizontal: 20.0),
                   child: Column(children: [
-                    SingleItem(garments[0]),
-                    SizedBox(height: 10.0),
-                    SingleItem(garments[1]),
-                    SizedBox(height: 10.0),
-                    SingleItem(garments[2]),
-                    SizedBox(height: 10.0),
-                    SingleItem(garments[3]),
-                    SizedBox(height: 10.0),
-                    SingleItem(garments[4]),
-                    SizedBox(height: 10.0),
+                    for(var item in garments) Column(children: [SingleItem(item), SizedBox(height: 10)])
                   ]))))
     ]);
   }

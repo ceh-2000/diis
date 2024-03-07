@@ -1,7 +1,6 @@
 import 'package:diis/clothes.dart';
 import 'package:diis/profile.dart';
 import 'package:diis/swaps.dart';
-import 'package:diis/wear-statistics.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -46,10 +45,9 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _selectedIndex = 1;
+  int _selectedIndex = 2;
 
   static final List<Widget> _widgetOptions = <Widget>[
-    MyWearStats(),
     NewClothes(),
     MySwaps(),
     MyProfile(),
@@ -84,10 +82,6 @@ class _MyHomePageState extends State<MyHomePage> {
       bottomNavigationBar: BottomNavigationBar(
           type : BottomNavigationBarType.fixed,
         items: <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.show_chart_rounded),
-            label: 'Stats',
-          ),
           BottomNavigationBarItem(
             icon: Icon(Icons.checkroom_rounded),
             label: 'New Clothes',
