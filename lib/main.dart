@@ -1,8 +1,11 @@
+import 'package:diis/clothes.dart';
 import 'package:diis/profile.dart';
 import 'package:diis/swaps.dart';
 import 'package:diis/wear-statistics.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+
+import 'garment.dart';
 
 void main() {
   runApp(MyApp());
@@ -18,19 +21,18 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xFF36013F)),
-        useMaterial3: true,
-    textTheme: TextTheme(
-    displayLarge: GoogleFonts.openSans(
-    fontSize: 72,
-    fontWeight: FontWeight.bold,
-    ),
-    titleLarge: GoogleFonts.openSans(
-    fontSize: 30,
-    ),
-    bodyMedium: GoogleFonts.openSans(),
-    displaySmall: GoogleFonts.openSans())
-      ),
+          colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xFF36013F)),
+          useMaterial3: true,
+          textTheme: TextTheme(
+              displayLarge: GoogleFonts.openSans(
+                fontSize: 72,
+                fontWeight: FontWeight.bold,
+              ),
+              titleLarge: GoogleFonts.openSans(
+                fontSize: 30,
+              ),
+              bodyMedium: GoogleFonts.openSans(),
+              displaySmall: GoogleFonts.openSans())),
       home: const MyHomePage(),
     );
   }
@@ -44,10 +46,11 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _selectedIndex = 0;
+  int _selectedIndex = 1;
 
   static final List<Widget> _widgetOptions = <Widget>[
     MyWearStats(),
+    NewClothes(),
     MySwaps(),
     MyProfile(),
   ];
@@ -79,6 +82,7 @@ class _MyHomePageState extends State<MyHomePage> {
         child: _widgetOptions.elementAt(_selectedIndex),
       ),
       bottomNavigationBar: BottomNavigationBar(
+          type : BottomNavigationBarType.fixed,
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.show_chart_rounded),
@@ -86,11 +90,15 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.checkroom_rounded),
+            label: 'New Clothes',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.swap_horiz_rounded),
             label: 'Swaps',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.person_2_rounded),
-            label: 'School',
+            label: 'Profile',
           ),
         ],
         currentIndex: _selectedIndex,
