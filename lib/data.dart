@@ -1,6 +1,7 @@
 import 'garment.dart';
 
 // Define hard-coded values for app demo
+String user = "ceh210";
 
 List<Garment> garments = [
   Garment("Jeans mini-skirt", "Skirt", "assets/images/garment_1.png", "ceh210", 2,
@@ -27,4 +28,3 @@ List<GarmentPair> garmentPairs = [
 
 ];
 
-String user = "ceh210";
